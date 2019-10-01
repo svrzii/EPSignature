@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EPSignatureViewController" customModule="EPSignature" customModuleProvider="target">
             <connections>
+                <outlet property="backgroundSignatureView" destination="PBW-QJ-ZvD" id="9RS-kn-8t8"/>
                 <outlet property="lblX" destination="MkH-Jy-I8l" id="LOa-wr-8Mx"/>
                 <outlet property="signatureView" destination="OAr-kk-HpY" id="4ZM-Go-wnK"/>
                 <outlet property="signatureViewHeightConstraint" destination="ctV-iH-Hi0" id="icC-db-zLO"/>
@@ -38,19 +39,19 @@
                                 <constraint firstAttribute="height" constant="21" id="qNr-ui-MUp"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                            <color key="textColor" red="0.66666668653488159" green="0.66666668653488159" blue="0.66666668653488159" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="textColor" red="0.8901960784313725" green="0.8901960784313725" blue="0.8901960784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yrj-8B-7oQ">
                             <rect key="frame" x="15" y="248" width="637" height="2"/>
-                            <color key="backgroundColor" red="0.66666668653488159" green="0.66666668653488159" blue="0.66666668653488159" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="backgroundColor" red="0.89170574899999999" green="0.89170574899999999" blue="0.89170574899999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="2" id="Nmg-gO-A3W"/>
                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="2" id="UWR-cY-Kps"/>
                             </constraints>
                         </view>
                     </subviews>
-                    <color key="backgroundColor" red="0.89170574899999999" green="0.89170574899999999" blue="0.89170574899999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="Yrj-8B-7oQ" secondAttribute="trailing" constant="15" id="2a5-Pd-pGW"/>
                         <constraint firstAttribute="bottom" secondItem="Yrj-8B-7oQ" secondAttribute="bottom" constant="50" id="RRS-K2-x8R"/>
@@ -65,7 +66,7 @@
                     </constraints>
                 </view>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="PBW-QJ-ZvD" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="4P1-Xg-S8P"/>
                 <constraint firstItem="PBW-QJ-ZvD" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="K9O-g9-uAC"/>
