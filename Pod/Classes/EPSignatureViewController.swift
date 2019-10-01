@@ -17,14 +17,10 @@ import UIKit
 open class EPSignatureViewController: UIViewController {
 
     // MARK: - IBOutlets
-    
-    @IBOutlet weak var switchSaveSignature: UISwitch!
-    @IBOutlet weak var lblSignatureSubtitle: UILabel!
-    @IBOutlet weak var lblDefaultSignature: UILabel!
-    @IBOutlet weak var lblDate: UILabel!
     @IBOutlet weak var viewMargin: UIView!
     @IBOutlet weak var lblX: UILabel!
     @IBOutlet weak var signatureView: EPSignatureView!
+    @IBOutlet var signatureViewHeightConstraint: NSLayoutConstraint!
     
     // MARK: - Public Vars
     
@@ -39,6 +35,7 @@ open class EPSignatureViewController: UIViewController {
     override open func viewDidLoad() {
         super.viewDidLoad()
 
+        self.signatureViewHeightConstraint.constant = min(screen.width, screen.height)
         let cancelButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.cancel, target: self, action: #selector(EPSignatureViewController.onTouchCancelButton))
         cancelButton.tintColor = tintColor
         self.navigationItem.leftBarButtonItem = cancelButton
@@ -47,29 +44,6 @@ open class EPSignatureViewController: UIViewController {
         doneButton.tintColor = tintColor
         let clearButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.trash, target: self, action: #selector(EPSignatureViewController.onTouchClearButton))
         clearButton.tintColor = tintColor
-        
-        if showsDate {
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateStyle  = DateFormatter.Style.short
-            dateFormatter.timeStyle  = DateFormatter.Style.none
-            lblDate.text = dateFormatter.string(from: Date())
-        } else {
-            lblDate.isHidden = true
-        }
-        
-        if showsSaveSignatureOption {
-            let actionButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.action, target:   self, action: #selector(EPSignatureViewController.onTouchActionButton(_:)))
-            actionButton.tintColor = tintColor
-            self.navigationItem.rightBarButtonItems = [doneButton, clearButton, actionButton]
-            switchSaveSignature.onTintColor = tintColor
-        } else {
-            self.navigationItem.rightBarButtonItems = [doneButton, clearButton]
-            lblDefaultSignature.isHidden = true
-            switchSaveSignature.isHidden = true
-        }
-        
-        lblSignatureSubtitle.text = subtitleText
-        switchSaveSignature.setOn(false, animated: true)
     }
     
     override open func didReceiveMemoryWarning() {
@@ -108,11 +82,6 @@ open class EPSignatureViewController: UIViewController {
 
     @objc func onTouchDoneButton() {
         if let signature = signatureView.getSignatureAsImage() {
-            if switchSaveSignature.isOn {
-                let docPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first
-                let filePath = (docPath! as NSString).appendingPathComponent("sig.data")
-                signatureView.saveSignature(filePath)
-            }
             signatureDelegate?.epSignature!(self, didSign: signature, boundingRect: signatureView.getSignatureBoundsInCanvas())
             dismiss(animated: true, completion: nil)
         } else {

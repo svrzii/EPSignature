@@ -34,3 +34,24 @@ extension UIColor {
         return UIColor(red: (233/255), green: (159/255), blue: (94/255), alpha: 1.0)
     }
 }
+
+struct screen {
+    static var rect: CGRect {
+        if let bounds = UIApplication.shared.keyWindow?.bounds {
+            return bounds
+        }
+        return UIScreen.main.bounds
+    }
+    static var width: CGFloat {
+        if let width = UIApplication.shared.keyWindow?.bounds.width {
+            return width
+        }
+        return UIScreen.main.bounds.width
+    }
+    static var height: CGFloat {
+        if let height = UIApplication.shared.keyWindow?.bounds.height {
+            return height
+        }
+        return UIScreen.main.bounds.height
+    }
+}
