@@ -28,14 +28,14 @@ open class EPSignatureView: UIView {
     
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        self.backgroundColor = UIColor.clear
+        self.backgroundColor = UIColor(red:0.97, green:0.97, blue:0.97, alpha:1.0)
         bezierPath.lineWidth = strokeWidth
         addLongPressGesture()
     }
     
     public override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = UIColor.clear
+        self.backgroundColor = UIColor(red:0.97, green:0.97, blue:0.97, alpha:1.0)
         bezierPath.lineWidth = strokeWidth
         addLongPressGesture()
     }
