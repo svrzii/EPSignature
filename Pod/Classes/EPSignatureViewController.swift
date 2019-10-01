@@ -35,7 +35,7 @@ open class EPSignatureViewController: UIViewController {
     override open func viewDidLoad() {
         super.viewDidLoad()
 
-        self.signatureViewHeightConstraint.constant = min(self.view.frame.width, self.view.frame.height)
+        self.signatureViewHeightConstraint.constant = min(self.view.frame.width * 0.8, self.view.frame.height * 0.8)
         let cancelButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.cancel, target: self, action: #selector(EPSignatureViewController.onTouchCancelButton))
         cancelButton.tintColor = tintColor
         self.navigationItem.leftBarButtonItem = cancelButton
