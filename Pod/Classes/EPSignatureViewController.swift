@@ -22,6 +22,7 @@ open class EPSignatureViewController: UIViewController {
     @IBOutlet weak var signatureView: EPSignatureView!
     @IBOutlet var signatureViewHeightConstraint: NSLayoutConstraint!
     
+    @IBOutlet var backgroundSignatureView: UIView!
     // MARK: - Public Vars
     
     open var showsDate: Bool = true
@@ -34,8 +35,13 @@ open class EPSignatureViewController: UIViewController {
     
     override open func viewDidLoad() {
         super.viewDidLoad()
-
-        self.signatureViewHeightConstraint.constant = min(self.view.frame.width * 0.8, self.view.frame.height * 0.8)
+        if #available(iOS 13.0, *) {
+            // Always adopt a light interface style.
+            overrideUserInterfaceStyle = .light
+        }
+        self.backgroundSignatureView.layer.borderWidth = 1
+        self.backgroundSignatureView.layer.borderColor = UIColor.black.cgColor
+        self.signatureViewHeightConstraint.constant = min(self.view.frame.width * 0.9, self.view.frame.height * 0.9)
         let cancelButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.cancel, target: self, action: #selector(EPSignatureViewController.onTouchCancelButton))
         cancelButton.tintColor = tintColor
         self.navigationItem.leftBarButtonItem = cancelButton
