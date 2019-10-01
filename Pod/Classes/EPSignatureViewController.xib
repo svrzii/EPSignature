@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <device id="retina4_7" orientation="landscape" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
@@ -19,14 +19,14 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OAr-kk-HpY" customClass="EPSignatureView" customModule="EPSignature" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="183.5" width="375" height="300"/>
+                    <rect key="frame" x="0.0" y="37.5" width="667" height="300"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="X" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MkH-Jy-I8l">
-                            <rect key="frame" x="15" y="274" width="20" height="21"/>
+                            <rect key="frame" x="15" y="259" width="20" height="21"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="20" id="e0y-1o-e9H"/>
                                 <constraint firstAttribute="height" constant="21" id="qNr-ui-MUp"/>
@@ -36,7 +36,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yrj-8B-7oQ">
-                            <rect key="frame" x="15" y="298" width="345" height="2"/>
+                            <rect key="frame" x="15" y="283" width="637" height="2"/>
                             <color key="backgroundColor" red="0.66666668653488159" green="0.66666668653488159" blue="0.66666668653488159" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="2" id="Nmg-gO-A3W"/>
@@ -50,7 +50,7 @@
                         <constraint firstItem="Yrj-8B-7oQ" firstAttribute="top" secondItem="MkH-Jy-I8l" secondAttribute="bottom" constant="3" id="jz4-nc-nRX"/>
                         <constraint firstAttribute="trailing" secondItem="Yrj-8B-7oQ" secondAttribute="trailing" constant="15" id="otT-EV-p7Z"/>
                         <constraint firstItem="MkH-Jy-I8l" firstAttribute="leading" secondItem="OAr-kk-HpY" secondAttribute="leading" constant="15" id="uEv-Zh-SPd"/>
-                        <constraint firstAttribute="bottom" secondItem="Yrj-8B-7oQ" secondAttribute="bottom" id="wMy-qO-fee"/>
+                        <constraint firstAttribute="bottom" secondItem="Yrj-8B-7oQ" secondAttribute="bottom" constant="15" id="wMy-qO-fee"/>
                     </constraints>
                 </view>
             </subviews>
