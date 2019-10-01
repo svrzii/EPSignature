@@ -44,6 +44,8 @@ open class EPSignatureViewController: UIViewController {
         doneButton.tintColor = tintColor
         let clearButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.trash, target: self, action: #selector(EPSignatureViewController.onTouchClearButton))
         clearButton.tintColor = tintColor
+
+        self.navigationItem.rightBarButtonItems = [doneButton, clearButton]
     }
     
     override open func didReceiveMemoryWarning() {
